@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">Cinéfilo</string>
+
+    <!-- Log In -->
+
+    <string name="login_username">Nombre de usuario</string>
+    <string name="login_password">Constraseña</string>
+    <string name="login_login">Ingresar</string>
+
+</resources>

@@ -44,27 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private void cargarDatos() {
         progressBar.setVisibility(View.VISIBLE);
 
-        TheMovieDatabaseService service = ServiceGenerator.createService(TheMovieDatabaseService.class);
-        Call<PeliculasCineResponse> call = service.obtenerPeliculasEnCines(BuildConfig.THE_MOVIE_DB_API_KEY);
-
-        call.enqueue(new Callback<PeliculasCineResponse>() {
-            @Override
-            public void onResponse(Call<PeliculasCineResponse> call, Response<PeliculasCineResponse> response) {
-                progressBar.setVisibility(View.GONE);
-                if (response.isSuccessful()) {
-                    PeliculasAdapter adaptador = new PeliculasAdapter(response.body().getResults(), MainActivity.this);
-                    peliculasRecyclerView.setAdapter(adaptador);
-                } else {
-                    mostrarMessage("Ocurrío un problema en el servidor");
-                }
-            }
-
-            @Override
-            public void onFailure(Call<PeliculasCineResponse> call, Throwable t) {
-                progressBar.setVisibility(View.GONE);
-                mostrarMessage("Error al obtener películas: " + t.getMessage());
-            }
-        });
+        // TODO: Código aquí
     }
 
     private void mostrarMessage(String mensaje) {

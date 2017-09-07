@@ -87,25 +87,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void obtenerSessionId(String token) {
-        TheMovieDatabaseService service = ServiceGenerator.createService(TheMovieDatabaseService.class);
-        Call<SessionResponse> call = service.newSession(BuildConfig.THE_MOVIE_DB_API_KEY, token);
 
-        call.enqueue(new Callback<SessionResponse>() {
-            @Override
-            public void onResponse(Call<SessionResponse> call, Response<SessionResponse> response) {
-                if (response.isSuccessful()) {
-                    Preferencias.setSessionId(response.body().getSessionId(), LoginActivity.this);
-                    irPantallaPrincipal();
-                } else {
-                    mostrarMessage("Algún error al obtener la sesión");
-                }
-            }
+        // TODO: Código aquí
 
-            @Override
-            public void onFailure(Call<SessionResponse> call, Throwable t) {
-                mostrarMessage("Error al crear sesión: " + t.getMessage());
-            }
-        });
     }
 
     private void irPantallaPrincipal() {
